@@ -27,9 +27,12 @@ const DeleteDataButton = styled.button`
   filter: drop-shadow(0 0 1rem ${bittersweet});
 `;
 
-const deleteData = () => localStorage.clear();
+const Account = ({ setOccurrences }) => {
+  const deleteData = () => {
+    localStorage.clear();
+    setOccurrences(0);
+  };
 
-const Account = () => {
   return (
     <DeleteDataContainer>
       <DeleteDataText>Delete data:</DeleteDataText>

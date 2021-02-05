@@ -8,7 +8,7 @@ import getData from "./getData";
 
 const App = () => {
   const [occurrences, setOccurrences] = useState(0);
-  const [data, setData] = useState(0);
+  const [data, setData] = useState({});
   const [currentTab, setCurrentTab] = useState(0);
 
   useEffect(() => {
@@ -20,7 +20,11 @@ const App = () => {
   useEffect(() => {
     const occs = localStorage.getItem("numberOfContractions");
 
-    if (occs) setData(getData(occs));
+    if (occs) {
+      setData(getData(occs));
+    } else {
+      setData({});
+    }
   }, [occurrences]);
 
   const setTab = (newValue) => {
@@ -37,7 +41,7 @@ const App = () => {
           <Graph data={data} />
         </div>
       )}
-      {currentTab === 2 && <Account />}
+      {currentTab === 2 && <Account setOccurrences={setOccurrences} />}
     </>
   );
 };
