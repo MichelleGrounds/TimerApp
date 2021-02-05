@@ -65,7 +65,7 @@ const options = (data) => ({
 const GraphMessage = styled.div`
   padding-top: 2em;
   text-align: center;
-  font-size: 150%;
+  font-size: 100%;
 `;
 
 const GraphContainer = styled.div`
