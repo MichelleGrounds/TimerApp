@@ -44,6 +44,7 @@ const options = (data) => ({
         },
         type: "time",
         ticks: {
+          autoSkip: true,
           displayFormats: {
             second: "h:mm:ss a",
           },

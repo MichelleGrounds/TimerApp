@@ -14,8 +14,8 @@ const ButtonContainer = styled.div`
 
 const Button = styled.button`
   border-radius: 50%;
-  width: 6em;
-  height: 6em;
+  width: 5em;
+  height: 5em;
   background-color: ${({ color }) => color};
   font-size: 200%;
   outline: none;
