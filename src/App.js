@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import styled from "styled-components";
+import { blackCoffee } from "./colors";
+import Timer from "./Timer";
 
-function App() {
+const HeaderContainer = styled.div`
+  width: 100%;
+  height: 15%;
+  background: ${blackCoffee};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+`;
+
+const HeaderText = styled.div`
+  color: white;
+  font-size: 200%;
+`;
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <HeaderContainer>
+        <HeaderText>My Contractions</HeaderText>
+      </HeaderContainer>
+      <Timer />
+    </>
   );
-}
+};
 
 export default App;
