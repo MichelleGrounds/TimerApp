@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import Timer from "../Timer";
+import Timer from "../components/Timer";
 import "@testing-library/jest-dom";
 
 jest.spyOn(window.localStorage.__proto__, "setItem");

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { aquamarine, bittersweet } from "./colors";
+import { aquamarine, bittersweet } from "../colors";
 
 const ButtonContainer = styled.div`
   display: flex;

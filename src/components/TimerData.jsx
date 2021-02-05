@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { bittersweet, lightCyan, steelTeal } from "./colors";
-import Time from "./Time";
+import { bittersweet, lightCyan, steelTeal } from "../colors";
+import Time from "../Time";
+import { Row, Cell } from "./Table";
 
 const getData = (occurrences) => {
   let times = {};
@@ -31,18 +32,6 @@ const getData = (occurrences) => {
 
   return times;
 };
-
-const Row = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px;
-`;
-
-const Cell = styled.div`
-  padding: 0.5em 1.5em;
-  flex-basis: 50%;
-`;
 
 const options = {
   weekday: "short",

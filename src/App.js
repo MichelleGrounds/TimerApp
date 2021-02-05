@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 import { blackCoffee } from "./colors";
-import Timer from "./Timer";
-import TimeData from "./TimerData";
+import Timer from "./components/Timer";
+import TimeData from "./components/TimerData";
 
 const HeaderContainer = styled.div`
   width: 100%;
