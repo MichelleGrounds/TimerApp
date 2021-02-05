@@ -28,9 +28,9 @@ const NavigationBar = ({ currentTab, setTab }) => {
         textColor={bittersweet}
         centered
       >
-        <Tab label="Timer" icon={<Timer />} />
-        <Tab label="Contraction Graph" icon={<ShowChart />} />
-        <Tab label="Account" icon={<Person />} />
+        <Tab data-testid="timer" icon={<Timer />} />
+        <Tab data-testid="contraction-graph" icon={<ShowChart />} />
+        <Tab data-testid="account" icon={<Person />} />
       </Tabs>
     </Paper>
   );

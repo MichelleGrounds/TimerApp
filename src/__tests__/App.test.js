@@ -5,13 +5,14 @@ import "@testing-library/jest-dom";
 test("renders the navigation bar", async () => {
   render(<App />);
 
-  expect(screen.getByText("Timer")).toBeInTheDocument();
-  expect(screen.getByText("Contraction Graph")).toBeInTheDocument();
+  expect(screen.getByTestId("timer")).toBeInTheDocument();
+  expect(screen.getByTestId("contraction-graph")).toBeInTheDocument();
+  expect(screen.getByTestId("account")).toBeInTheDocument();
 
   expect(screen.getByText("Duration")).toBeInTheDocument();
   expect(screen.getByText("Frequency")).toBeInTheDocument();
 
-  fireEvent.click(screen.getByText("Contraction Graph"));
+  fireEvent.click(screen.getByTestId("contraction-graph"));
 
   expect(
     await screen.findByText(
