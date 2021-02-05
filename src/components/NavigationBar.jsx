@@ -1,16 +1,20 @@
 import React from "react";
 import { Paper, Tabs, Tab } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import { blackCoffee, bittersweet } from "../colors";
+
 const useStyles = makeStyles({
   root: {
     flexGrow: 1,
+    backgroundColor: blackCoffee,
+    color: bittersweet,
   },
 });
 
 const NavigationBar = ({ currentTab, setTab }) => {
   const classes = useStyles();
 
-  const handleChange = (event, newValue) => {
+  const handleChange = (_, newValue) => {
     setTab(newValue);
   };
 
@@ -20,7 +24,7 @@ const NavigationBar = ({ currentTab, setTab }) => {
         value={currentTab}
         onChange={handleChange}
         indicatorColor="primary"
-        textColor="primary"
+        textColor={bittersweet}
         centered
       >
         <Tab label="Timer" />

@@ -1,5 +1,7 @@
 import { Scatter } from "react-chartjs-2";
 import moment from "moment";
+import styled from "styled-components";
+import { bittersweet, blackCoffee, lightCyan } from "../colors";
 
 const constructData = (data) => ({
   labels: ["Scatter"],
@@ -7,13 +9,13 @@ const constructData = (data) => ({
     {
       label: "Duration/Frequency",
       fill: false,
-      backgroundColor: "rgba(75,192,192,0.4)",
-      pointBorderColor: "rgba(75,192,192,1)",
-      pointBackgroundColor: "#fff",
+      backgroundColor: lightCyan,
+      pointBorderColor: bittersweet,
+      pointBackgroundColor: lightCyan,
       pointBorderWidth: 10,
       pointHoverRadius: 5,
-      pointHoverBackgroundColor: "rgba(75,192,192,1)",
-      pointHoverBorderColor: "rgba(220,220,220,1)",
+      pointHoverBackgroundColor: blackCoffee,
+      pointHoverBorderColor: blackCoffee,
       pointHoverBorderWidth: 2,
       pointRadius: 1,
       pointHitRadius: 10,
@@ -30,9 +32,9 @@ const constructData = (data) => ({
 
 const options = (data) => ({
   responsive: true,
-  // tooltips: {
-  //   mode: "label",
-  // },
+  tooltips: {
+    mode: "label",
+  },
   scales: {
     xAxes: [
       {
@@ -60,11 +62,19 @@ const options = (data) => ({
   },
 });
 
+const GraphMessage = styled.div`
+  padding-top: 2em;
+  text-align: center;
+  font-size: 150%;
+`;
+
 const Graph = ({ data }) => {
   return (
     <>
       {!data[1] && (
-        <div>Once you have recorded contractions a graph will appear</div>
+        <GraphMessage>
+          Once you have recorded contractions a graph will appear
+        </GraphMessage>
       )}
       {data[1] && (
         <Scatter data={constructData(data)} options={options(data)} />
