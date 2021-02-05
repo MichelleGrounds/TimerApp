@@ -68,6 +68,10 @@ const GraphMessage = styled.div`
   font-size: 150%;
 `;
 
+const GraphContainer = styled.div`
+  padding: 2em;
+`;
+
 const Graph = ({ data }) => {
   return (
     <>
@@ -77,7 +81,9 @@ const Graph = ({ data }) => {
         </GraphMessage>
       )}
       {data[1] && (
-        <Scatter data={constructData(data)} options={options(data)} />
+        <GraphContainer>
+          <Scatter data={constructData(data)} options={options(data)} />
+        </GraphContainer>
       )}
     </>
   );
