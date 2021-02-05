@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { bittersweet, lightCyan, steelTeal } from "../colors";
+import { steelTeal } from "../colors";
 import Time from "../Time";
 import { Row, Cell } from "./Table";
 
