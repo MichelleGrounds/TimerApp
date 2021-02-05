@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+
 import { blackCoffee } from "./colors";
 import Timer from "./Timer";
+import TimeData from "./TimerData";
 
 const HeaderContainer = styled.div`
   width: 100%;
@@ -19,12 +21,19 @@ const HeaderText = styled.div`
 `;
 
 const App = () => {
+  const [occurrences, setOccurrences] = useState(0);
+
+  useEffect(() => {
+    setOccurrences(localStorage.getItem("numberOfContractions"));
+  }, []);
+
   return (
     <>
       <HeaderContainer>
         <HeaderText>My Contractions</HeaderText>
       </HeaderContainer>
-      <Timer />
+      <TimeData occurrences={occurrences} />
+      <Timer setOccurrences={setOccurrences} />
     </>
   );
 };
