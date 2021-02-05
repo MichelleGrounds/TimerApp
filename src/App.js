@@ -3,6 +3,7 @@ import Timer from "./components/Timer";
 import TimerDataView from "./components/TimerDataView";
 import NavigationBar from "./components/NavigationBar";
 import Graph from "./components/Graph";
+import Account from "./components/Account";
 import getData from "./getData";
 
 const App = () => {
@@ -36,6 +37,7 @@ const App = () => {
           <Graph data={data} />
         </div>
       )}
+      {currentTab === 2 && <Account />}
     </>
   );
 };

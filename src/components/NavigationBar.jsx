@@ -2,7 +2,7 @@ import React from "react";
 import { Paper, Tabs, Tab } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { blackCoffee, bittersweet } from "../colors";
-import { Timer, ShowChart } from "@material-ui/icons";
+import { Timer, ShowChart, Person } from "@material-ui/icons";
 
 const useStyles = makeStyles({
   root: {
@@ -30,6 +30,7 @@ const NavigationBar = ({ currentTab, setTab }) => {
       >
         <Tab label="Timer" icon={<Timer />} />
         <Tab label="Contraction Graph" icon={<ShowChart />} />
+        <Tab label="Account" icon={<Person />} />
       </Tabs>
     </Paper>
   );
