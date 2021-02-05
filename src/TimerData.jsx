@@ -3,15 +3,6 @@ import styled from "styled-components";
 import { bittersweet, lightCyan, steelTeal } from "./colors";
 import Time from "./Time";
 
-const ButtonContainer = styled.div`
-  display: flex;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  justify-content: center;
-  margin: 2em 0;
-`;
-
 const getData = (occurrences) => {
   let times = {};
 
@@ -74,6 +65,8 @@ const TimerDataHeaderText = styled.div`
 
 const TimerDataContainer = styled.div`
   width: 75%;
+  height: 70vh;
+  overflow: auto;
   margin: 0 auto;
 `;
 
