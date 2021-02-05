@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { steelTeal } from "../colors";
+import { blackCoffee, steelTeal } from "../colors";
 import { Row, Cell } from "./Table";
 
 const options = {
@@ -14,7 +14,7 @@ const options = {
 
 const TimerDataText = styled.div`
   text-align: center;
-  color: ${({ primary }) => (primary ? steelTeal : "black")};
+  color: ${({ primary }) => (primary ? steelTeal : blackCoffee)};
   font-size: ${({ primary }) => (primary ? "150%" : "75%")};
 `;
 

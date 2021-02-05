@@ -82,7 +82,11 @@ const Graph = ({ data }) => {
       )}
       {data[1] && (
         <GraphContainer>
-          <Scatter data={constructData(data)} options={options(data)} />
+          <Scatter
+            data={constructData(data)}
+            options={options(data)}
+            height={600}
+          />
         </GraphContainer>
       )}
     </>
