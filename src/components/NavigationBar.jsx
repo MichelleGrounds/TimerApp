@@ -24,8 +24,7 @@ const NavigationBar = ({ currentTab, setTab }) => {
         centered
       >
         <Tab label="Timer" />
-        <Tab label="Graph" />
-        <Tab label="Something else" />
+        <Tab label="Contraction Graph" />
       </Tabs>
     </Paper>
   );

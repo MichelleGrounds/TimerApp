@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { aquamarine, bittersweet } from "../colors";
+import moment from "moment";
 
 const ButtonContainer = styled.div`
   display: flex;
@@ -33,6 +34,7 @@ const Timer = ({ setOccurrences }) => {
       "numberOfContractions",
       numberOfContractionsSoFarInt + 1
     );
+
     localStorage.setItem(`${numberOfContractionsSoFarInt + 1}-start`, time);
   };
 
@@ -43,7 +45,7 @@ const Timer = ({ setOccurrences }) => {
   };
 
   const onClick = () => {
-    const time = new Date();
+    const time = moment();
     const occurrences = localStorage.getItem("numberOfContractions");
 
     setOccurrences(occurrences);
