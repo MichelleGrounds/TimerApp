@@ -6,7 +6,7 @@ jest.spyOn(window.localStorage.__proto__, "setItem");
 window.localStorage.__proto__.setItem = jest.fn();
 
 test("renders a button that can be toggled between Start and Stop", async () => {
-  render(<Timer />);
+  render(<Timer setOccurrences={jest.fn()} />);
 
   expect(screen.getByText("Start")).toBeInTheDocument();
 
@@ -20,7 +20,7 @@ test("renders a button that can be toggled between Start and Stop", async () => 
 });
 
 test("When a timer is started saves the start time to local storage", () => {
-  render(<Timer />);
+  render(<Timer setOccurrences={jest.fn()} />);
 
   fireEvent.click(screen.getByText("Start"));
 
@@ -28,11 +28,11 @@ test("When a timer is started saves the start time to local storage", () => {
 });
 
 test("When a timer is stopped saves the end time to local storage", () => {
-  render(<Timer />);
+  render(<Timer setOccurrences={jest.fn()} />);
 
   fireEvent.click(screen.getByText("Start"));
 
   fireEvent.click(screen.getByText("Stop"));
 
-  expect(localStorage.setItem).toHaveBeenCalledTimes(4);
+  expect(localStorage.setItem).toHaveBeenCalledTimes(3);
 });
