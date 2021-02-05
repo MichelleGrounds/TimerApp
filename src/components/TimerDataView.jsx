@@ -15,7 +15,7 @@ const options = {
 const TimerDataText = styled.div`
   text-align: center;
   color: ${({ primary }) => (primary ? steelTeal : "black")};
-  font-size: ${({ primary }) => (primary ? "200%" : "75%")};
+  font-size: ${({ primary }) => (primary ? "150%" : "75%")};
 `;
 
 const TimerDataHeaderText = styled.div`
