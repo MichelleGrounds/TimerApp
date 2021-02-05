@@ -23,6 +23,7 @@ const DeleteDataButton = styled.button`
   text-align: center;
   line-height: 1rem;
   border: none;
+  cursor: pointer;
   filter: drop-shadow(0 0 1rem ${bittersweet});
 `;
 

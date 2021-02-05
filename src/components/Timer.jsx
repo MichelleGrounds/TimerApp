@@ -20,6 +20,7 @@ const Button = styled.button`
   font-size: 200%;
   outline: none;
   border: none;
+  cursor: pointer;
   filter: drop-shadow(0 0 1rem ${({ color }) => color});
 `;
 
