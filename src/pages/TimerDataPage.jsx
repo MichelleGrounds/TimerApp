@@ -43,17 +43,6 @@ const TimerDataView = ({ data }) => {
   return (
     <>
       <TimerDataContainer>
-        <Row>
-          <Cell>
-            <TimerDataHeaderText>Start</TimerDataHeaderText>
-          </Cell>
-          <Cell>
-            <TimerDataHeaderText>Duration</TimerDataHeaderText>
-          </Cell>
-          <Cell>
-            <TimerDataHeaderText>Frequency</TimerDataHeaderText>
-          </Cell>
-        </Row>
         {data[1] &&
           Object.keys(data)
             .reverse()
