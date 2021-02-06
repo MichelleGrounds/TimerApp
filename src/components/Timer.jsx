@@ -1,6 +1,5 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import { aquamarine, bittersweet } from "../colors";
+import React, { useState, useContext } from "react";
+import styled, { ThemeContext } from "styled-components";
 import moment from "moment";
 
 const ButtonContainer = styled.div`
@@ -25,6 +24,8 @@ const Button = styled.button`
 `;
 
 const Timer = ({ setOccurrences }) => {
+  const theme = useContext(ThemeContext);
+
   const [timerStarted, setTimerStarted] = useState(false);
 
   const startTimer = (time, occurrences) => {
@@ -56,7 +57,10 @@ const Timer = ({ setOccurrences }) => {
 
   return (
     <ButtonContainer>
-      <Button onClick={onClick} color={timerStarted ? bittersweet : aquamarine}>
+      <Button
+        onClick={onClick}
+        color={timerStarted ? theme.bittersweet : theme.aquamarine}
+      >
         {timerStarted ? "Stop" : "Start"}
       </Button>
     </ButtonContainer>

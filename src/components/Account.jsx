@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { bittersweet, steelTeal } from "../colors";
 
 const DeleteDataContainer = styled.div`
   display: flex;
@@ -9,12 +8,12 @@ const DeleteDataContainer = styled.div`
 `;
 
 const DeleteDataText = styled.div`
-  color: ${steelTeal};
+  color: ${({ theme }) => theme.steelTeal};
   padding: 1em;
 `;
 
 const DeleteDataButton = styled.button`
-  background: ${bittersweet};
+  background: ${({ theme }) => theme.bittersweet};
   width: 120px;
   height: 40px;
   border-radius: 4px;
@@ -24,7 +23,7 @@ const DeleteDataButton = styled.button`
   line-height: 1rem;
   border: none;
   cursor: pointer;
-  filter: drop-shadow(0 0 1rem ${bittersweet});
+  filter: drop-shadow(0 0 1rem ${({ theme }) => theme.bittersweet});
 `;
 
 const Account = ({ setOccurrences }) => {

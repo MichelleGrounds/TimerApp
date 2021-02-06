@@ -1,21 +1,21 @@
+import React, { useContext } from "react";
 import { Scatter } from "react-chartjs-2";
 import moment from "moment";
-import styled from "styled-components";
-import { bittersweet, blackCoffee, lightCyan } from "../colors";
+import styled, { ThemeContext } from "styled-components";
 
-const constructData = (data) => ({
+const constructData = (data, theme) => ({
   labels: ["Scatter"],
   datasets: [
     {
       label: "Duration/Frequency",
       fill: false,
-      backgroundColor: lightCyan,
-      pointBorderColor: bittersweet,
-      pointBackgroundColor: lightCyan,
+      backgroundColor: theme.lightCyan,
+      pointBorderColor: theme.bittersweet,
+      pointBackgroundColor: theme.lightCyan,
       pointBorderWidth: 10,
       pointHoverRadius: 5,
-      pointHoverBackgroundColor: blackCoffee,
-      pointHoverBorderColor: blackCoffee,
+      pointHoverBackgroundColor: theme.blackCoffee,
+      pointHoverBorderColor: theme.blackCoffee,
       pointHoverBorderWidth: 2,
       pointRadius: 1,
       pointHitRadius: 10,
@@ -74,6 +74,8 @@ const GraphContainer = styled.div`
 `;
 
 const Graph = ({ data }) => {
+  const theme = useContext(ThemeContext);
+
   return (
     <>
       {!data[1] && (
@@ -84,7 +86,7 @@ const Graph = ({ data }) => {
       {data[1] && (
         <GraphContainer>
           <Scatter
-            data={constructData(data)}
+            data={constructData(data, theme)}
             options={options(data)}
             height={600}
           />
