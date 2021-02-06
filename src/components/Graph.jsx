@@ -28,6 +28,7 @@ const constructData = (data, theme) => ({
 });
 
 const options = (data) => ({
+  maintainAspectRatio: false,
   responsive: true,
   tooltips: {
     mode: "label",

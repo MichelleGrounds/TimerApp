@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { Row, Cell } from "./Table";
-import moment from "moment";
-import Time from "../Time";
 
 const options = {
   weekday: "short",
