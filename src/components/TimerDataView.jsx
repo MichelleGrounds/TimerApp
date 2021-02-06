@@ -1,15 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Row, Cell } from "./Table";
-
-const options = {
-  weekday: "short",
-  year: "2-digit",
-  month: "short",
-  day: "numeric",
-  hour: "2-digit",
-  minute: "2-digit",
-};
+import moment from "moment";
 
 const TimerDataText = styled.div`
   text-align: center;
@@ -30,7 +22,7 @@ const TimerDataContainer = styled.div`
 `;
 
 const TimerDataLine = ({ data }) => {
-  const start = new Date(data.start).toLocaleDateString("en-gb", options);
+  const start = moment(data.start).format("D MMM h:mm a");
 
   return (
     <Row>
