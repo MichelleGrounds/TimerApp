@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Row, Cell } from "./Table";
+import { Row, Cell } from "../components/Table";
 import moment from "moment";
 
 const TimerDataText = styled.div`

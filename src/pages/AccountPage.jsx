@@ -3,7 +3,7 @@ import {
   DeleteDataContainer,
   DeleteDataText,
   DeleteDataButton,
-} from "./DeleteData";
+} from "../components/DeleteData";
 
 const Account = ({ setOccurrences }) => {
   const deleteData = () => {

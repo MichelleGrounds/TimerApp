@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Timer from "./components/Timer";
-import TimerDataView from "./components/TimerDataView";
+import TimerDataView from "./pages/TimerDataPage";
 import NavigationBar from "./components/NavigationBar";
-import Graph from "./components/Graph";
-import Account from "./components/Account";
+import Graph from "./pages/GraphPage";
+import Account from "./pages/AccountPage";
 import getData from "./getData";
 
 const App = () => {
