@@ -26,8 +26,8 @@ const NavigationBar = ({ currentTab, setTab }) => {
       <Tabs
         value={currentTab}
         onChange={handleChange}
-        indicatorColor="primary"
-        textColor={theme.bittersweet}
+        indicatorColor="secondary"
+        textColor="secondary"
         centered
       >
         <Tab data-testid="timer" icon={<Timer />} />

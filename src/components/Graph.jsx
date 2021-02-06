@@ -19,13 +19,10 @@ const constructData = (data, theme) => ({
       pointHoverBorderWidth: 2,
       pointRadius: 1,
       pointHitRadius: 10,
-      data: Object.keys(data).map(
-        (key) =>
-          console.log(moment(data[key].start).format("h:mm:ss a")) || {
-            x: moment(data[key].start),
-            y: moment(data[key].stop).diff(moment(data[key].start)) / 1000,
-          }
-      ),
+      data: Object.keys(data).map((key) => ({
+        x: moment(data[key].start),
+        y: moment(data[key].stop).diff(moment(data[key].start)) / 1000,
+      })),
     },
   ],
 });

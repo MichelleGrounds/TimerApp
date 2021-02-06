@@ -1,11 +1,27 @@
+import { createMuiTheme } from "@material-ui/core/styles";
+
+const aquamarine = "#78FFD6";
+const blackCoffee = "#37323E";
+const steelTeal = "#6E8387";
+const bittersweet = "#FF6B6B";
+const lightCyan = "#E1FAF9";
+
 const theme = {
   dark: {
-    aquamarine: "#78FFD6",
-    blackCoffee: "#37323E",
-    steelTeal: "#6E8387",
-    bittersweet: "#FF6B6B",
-    lightCyan: "#E1FAF9",
+    aquamarine,
+    blackCoffee,
+    steelTeal,
+    bittersweet,
+    lightCyan,
+  },
+  palette: {
+    primary: {
+      main: bittersweet,
+      dark: bittersweet,
+      light: bittersweet,
+      contrastText: bittersweet,
+    },
   },
 };
 
-export default theme;
+export default createMuiTheme(theme);

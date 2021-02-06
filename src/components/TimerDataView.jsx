@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { Row, Cell } from "./Table";
+import moment from "moment";
+import Time from "../Time";
 
 const options = {
   weekday: "short",
@@ -15,7 +17,7 @@ const TimerDataText = styled.div`
   text-align: center;
   color: ${({ primary, theme }) =>
     primary ? theme.steelTeal : theme.blackCoffee};
-  font-size: ${({ primary }) => (primary ? "150%" : "75%")};
+  font-size: ${({ primary }) => (primary ? "125%" : "75%")};
 `;
 
 const TimerDataHeaderText = styled.div`

@@ -20,3 +20,15 @@ export const Button = styled.button`
   cursor: pointer;
   filter: drop-shadow(0 0 1rem ${({ color }) => color});
 `;
+
+export const TimeButtonContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const TimeButtonText = styled.div`
+  color: ${({ theme }) => theme.blackCoffee};
+  font-size: ${({ primary }) => (primary ? "2rem" : "1rem")};
+`;

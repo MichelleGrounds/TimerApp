@@ -1,15 +1,22 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { ThemeContext } from "styled-components";
 import moment from "moment";
-import { Button, ButtonContainer } from "./TimerButton";
+import {
+  Button,
+  ButtonContainer,
+  TimeButtonContainer,
+  TimeButtonText,
+} from "./TimerButton";
+import Time from "../Time";
 
 const Timer = ({ setOccurrences }) => {
+  const [timeStarted, setTimeStarted] = useState(null);
+  const [currentDuration, setCurrentDuration] = useState(null);
+
   const theme = useContext(ThemeContext);
 
-  const [timerStarted, setTimerStarted] = useState(false);
-
   const startTimer = (time, occurrences) => {
-    setTimerStarted(true);
+    setTimeStarted(time);
     const numberOfContractionsSoFarInt = Number.parseInt(occurrences) || 0;
 
     localStorage.setItem(
@@ -21,7 +28,7 @@ const Timer = ({ setOccurrences }) => {
   };
 
   const stopTimer = (time, occurrences) => {
-    setTimerStarted(false);
+    setTimeStarted(null);
 
     localStorage.setItem(`${occurrences}-stop`, time);
   };
@@ -30,18 +37,38 @@ const Timer = ({ setOccurrences }) => {
     const time = moment();
     const occurrences = localStorage.getItem("numberOfContractions");
 
-    setOccurrences(occurrences);
+    timeStarted ? stopTimer(time, occurrences) : startTimer(time, occurrences);
 
-    timerStarted ? stopTimer(time, occurrences) : startTimer(time, occurrences);
+    setOccurrences(occurrences);
   };
+
+  useEffect(() => {
+    let id;
+
+    if (timeStarted) {
+      id = setInterval(() => {
+        const duration = Time.convertMS(moment().diff(timeStarted));
+        setCurrentDuration(duration);
+      }, 1000);
+    } else {
+      setCurrentDuration(null);
+    }
+
+    return () => id && clearInterval(id);
+  }, [timeStarted]);
 
   return (
     <ButtonContainer>
       <Button
         onClick={onClick}
-        color={timerStarted ? theme.bittersweet : theme.aquamarine}
+        color={timeStarted ? theme.bittersweet : theme.aquamarine}
       >
-        {timerStarted ? "Stop" : "Start"}
+        <TimeButtonContainer>
+          <TimeButtonText primary={true}>
+            {timeStarted ? "Stop" : "Start"}
+          </TimeButtonText>
+          <TimeButtonText primary={false}>{currentDuration}</TimeButtonText>
+        </TimeButtonContainer>
       </Button>
     </ButtonContainer>
   );
