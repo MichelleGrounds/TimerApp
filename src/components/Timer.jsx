@@ -1,27 +1,7 @@
 import React, { useState, useContext } from "react";
-import styled, { ThemeContext } from "styled-components";
+import { ThemeContext } from "styled-components";
 import moment from "moment";
-
-const ButtonContainer = styled.div`
-  display: flex;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  justify-content: center;
-  margin: 2em 0;
-`;
-
-const Button = styled.button`
-  border-radius: 50%;
-  width: 5em;
-  height: 5em;
-  background-color: ${({ color }) => color};
-  font-size: 200%;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  filter: drop-shadow(0 0 1rem ${({ color }) => color});
-`;
+import { Button, ButtonContainer } from "./TimerButton";
 
 const Timer = ({ setOccurrences }) => {
   const theme = useContext(ThemeContext);
