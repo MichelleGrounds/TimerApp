@@ -36,11 +36,7 @@ const App = () => {
       <NavigationBar currentTab={currentTab} setTab={setTab} />
       {currentTab === 0 && <TimerDataView data={data} />}
       {currentTab === 0 && <Timer setOccurrences={setOccurrences} />}
-      {currentTab === 1 && (
-        <div>
-          <Graph data={data} />
-        </div>
-      )}
+      {currentTab === 1 && <Graph data={data} />}
       {currentTab === 2 && <Account setOccurrences={setOccurrences} />}
     </>
   );
