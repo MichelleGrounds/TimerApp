@@ -36,15 +36,18 @@ const options = (data) => ({
   scales: {
     xAxes: [
       {
-        scaleLabel: {
-          display: true,
-          labelString: "time",
+        gridLines: {
+          drawOnChartArea: false,
+          color: "rgba(255, 255, 255, 0.1)",
+          drawBorder: true,
         },
         type: "time",
-        ticks: {
+        time: {
           autoSkip: true,
           displayFormats: {
-            second: "h:mm:ss a",
+            second: "HH:mm:ss",
+            minute: "HH:mm",
+            hour: "HH",
           },
           min: data["1"].start,
         },
@@ -52,6 +55,11 @@ const options = (data) => ({
     ],
     yAxes: [
       {
+        gridLines: {
+          drawOnChartArea: false,
+          color: "rgba(255, 255, 255, 0.1)",
+          drawBorder: true,
+        },
         scaleLabel: {
           display: true,
           labelString: "Duration (s)",

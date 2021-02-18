@@ -5,24 +5,19 @@ import moment from "moment";
 
 const TimerDataText = styled.div`
   text-align: center;
-  color: ${({ primary, theme }) =>
-    primary ? theme.steelTeal : theme.blackCoffee};
-  font-size: ${({ primary }) => (primary ? "125%" : "75%")};
-`;
-
-const TimerDataHeaderText = styled.div`
-  text-align: center;
+  color: ${({ primary, theme }) => (primary ? theme.steelTeal : "#544c5f")};
+  font-size: ${({ primary }) => (primary ? "125%" : "85%")};
 `;
 
 const TimerDataContainer = styled.div`
-  width: 75%;
+  width: 90%;
   height: 70vh;
   overflow: auto;
   margin: 0 auto;
 `;
 
 const TimerDataLine = ({ data }) => {
-  const start = moment(data.start).format("D MMM h:mm a");
+  const start = moment(data.start).format("D MMM H:mm");
 
   return (
     <Row>
